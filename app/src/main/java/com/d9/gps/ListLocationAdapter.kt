@@ -30,7 +30,7 @@ class ListLocationAdapter : RecyclerView.Adapter<ListLocationAdapter.LocationVie
 
     fun append(data : LocationData) {
         listItem.add(data)
-        notifyItemChanged(listItem.size - 1)
+        notifyItemInserted(listItem.size - 1)
     }
 
     class LocationViewHolder(itemView : View) : ViewHolder(itemView) {

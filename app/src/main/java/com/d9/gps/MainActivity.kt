@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
         binding.rvLocation.addItemDecoration(DividerItemDecoration(this, RecyclerView.VERTICAL))
 
         val locManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 0.0f, LocationListener {
+        locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0.0f, LocationListener {
             val data = LocationData(lat = it.latitude, lng = it.longitude, accuracy = it.accuracy)
             adapter.append(data)
-            binding.rvLocation.scrollToPosition(adapter.itemCount)
+            binding.rvLocation.scrollToPosition(adapter.itemCount - 1)
         })
     }
 
